@@ -1,0 +1,37 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  id: ID!
+  email: String!
+  fullName: String!
+  roles: [ValidRoles!]!
+  isActive: Boolean!
+}
+
+enum ValidRoles {
+  admin
+  superUser
+  user
+}
+
+type Query {
+  users(offset: Int = 0, limit: Int = 10): [User!]!
+  user(id: ID!): User!
+}
+
+type Mutation {
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  blockUser(id: ID!): User!
+
+  """This populates the database for development"""
+  executeSeed: Boolean!
+}
+
+input UpdateUserInput {
+  id: ID!
+  fullName: String
+  email: String
+  password: String
+}
