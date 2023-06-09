@@ -9,7 +9,7 @@ import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { CommonModule } from './common/common.module';
 import { SeedModule } from './seed/seed.module';
-import { MessagesWsModule } from './messages-ws/messages-ws.module';
+
 
 @Module({
   imports: [
@@ -41,8 +41,6 @@ import { MessagesWsModule } from './messages-ws/messages-ws.module';
     CommonModule,
 
     SeedModule,
-
-    MessagesWsModule,
   ],
 })
 export class AppModule {}
